@@ -14,6 +14,8 @@
   <dd><%= @book.genre %></dd>
   <dt><strong><%= model_class.human_attribute_name(:author) %>:</strong></dt>
   <dd><%= @book.author %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:drafts) %>:</strong></dt>
+  <dd><%= @book.drafts %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

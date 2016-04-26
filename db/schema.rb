@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 20160426055746) do
     t.text     "description", limit: 65535
     t.string   "genre",       limit: 255
     t.string   "author",      limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.integer  "user_id",     limit: 4
+    t.boolean  "drafts",                    default: false, null: false
   end
 
   create_table "users", force: :cascade do |t|

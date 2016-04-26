@@ -13,13 +13,14 @@
       <th><%= model_class.human_attribute_name(:genre) %></th>
       <th><%= model_class.human_attribute_name(:author) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:drafts) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @books.each do |book| %>
+    <% Book.where('created_at >= ?', 1.week.ago).each do |book| %>
       <tr>
-        <td><%= link_to book.id, book_path(book) %></td>
+        <td><%= link_to book.id, root_path %></td>
         <td><%= book.title %></td>
         <td><%= book.user.email %></td>
         <td><%= book.image_url %></td>
